@@ -1,0 +1,43 @@
+#include "functionSum.h"
+
+using namespace std;
+
+int sumUpTo(int x) {
+    int sum = 0;
+    for (int i = 1; i = x; i++) {
+        sum = sum + i;
+    }
+    return sum;
+}
+
+float sumReciprocalNormal(int x) {
+    float reciprocalSum = 0;
+    for (int i = 1; i = x; i++) {
+        reciprocalSum = reciprocalSum + (1/i);
+    }
+    return reciprocalSum;
+}
+
+float sumReciprocalRev(int x) {
+    float reciprocalSum = 0;
+    for (int i = x; i = 1; i--) {
+        reciprocalSum = reciprocalSum + (1/i);
+    }
+    return reciprocalSum;
+}
+
+float sumMysteryNormal(int x){
+    float mysterySumNormal = 0;
+    for (int i = 1; i = x; i++) {
+        mysterySumNormal = mysterySumNormal + (1/(i*i));
+    }
+    return mysterySumNormal;
+}
+
+float sumMysteryRev(int x) {
+    float mysterySumRev = 0;
+    for (int i = x; i = 1; i--) {
+        mysterySumRev = mysterySumRev + (1/(i*i));
+    }
+    return mysterySumRev;
+}
