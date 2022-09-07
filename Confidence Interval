@@ -1,0 +1,21 @@
+from scipy.stats import bernoulli
+import numpy as np
+import scipy.stats as st
+
+#define sample data
+p = 0.3
+x = bernoulli(p)
+x_samples = x.rvs(10000)
+degrees_freedom = len(x_samples)-1
+
+conf_interval = st.t.interval(alpha = 0.95, df = degrees_freedom, loc = np.mean(x_samples), scale = st.sem(x_samples))
+print(conf_interval)
+
+for test in range(100):
+	success = 0
+	p = 0.3
+	x = bernoulli(p)
+	x_samples = x.rvs(10000)
+	degrees_freedom = len(x_samples)-1
+	conf_interval = st.t.interval(alpha = 0.95, df = degrees_freedom, loc = np.mean(x_samples), scale = st.sem(x_samples))
+	print(conf_interval)
