@@ -1,0 +1,20 @@
+import random
+import numpy as np
+from scipy.stats import zscore
+import math
+import pandas as pd
+
+sum_list = []
+for large_test in range(1000):
+	for test in range(25):
+		sum = 0;
+		x = random.randint(0, 20)
+		sum = sum + x
+		sum_list.append(sum)
+	#print(sum_list)
+print(sum_list)
+
+# After running this program and analyzing the data, it is clear that for
+# a large number of trials, this follows the Normal distribution. Overall,
+# the summations are most frequent toward the median, 12.5, of the random
+# variable intervals.  
