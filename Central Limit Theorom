@@ -1,0 +1,35 @@
+import random
+import numpy as np
+from scipy.stats import zscore
+import math
+
+x = random.randint(0, 9)
+#print(x)
+sum = 0
+num_list = []
+for test in range(1000):
+	y = random.randint(0, 9)
+	num_list.append(y)
+	#sum = sum + y
+
+#print(num_list)
+# print(average)
+
+# standard_deviation = np.std(num_list, ddof=1)
+# result = zscore(num_list)
+# #print(standard_deviation)
+# print(result)
+
+average = 4.5
+
+difference_squared = 0
+for i in range(len(num_list)):
+	difference_squared = difference_squared + (num_list[i]-average) ** 2
+
+standard_deviation = math.sqrt(difference_squared / ((len(num_list)) - 1))
+print(standard_deviation)
+
+# This does follow what we would expect from the central limit theorom. That
+# is, the sum of a large number of independent random variables, such as the 
+# difference suared for num_list, follows a normal distribution. This is 
+# especially relevant since these are random numbers generated. 
